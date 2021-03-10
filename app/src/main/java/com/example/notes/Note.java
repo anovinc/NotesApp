@@ -5,12 +5,16 @@ import io.realm.RealmObject;
 public class Note extends RealmObject {
     private String Text;
 
+
     public Note() {
 
     }
 
-    public Note(String text) {
+
+
+    public Note(String text, int id) {
         Text = text;
+
     }
 
     public String getText() {

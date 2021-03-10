@@ -17,10 +17,12 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.MyViewHolder> 
     private List<Note> noteList;
     private DeletingCommunicatior communicatior;
 
+
     public NoteAdapter(Context mContext, List<Note> noteList) {
         this.mContext = mContext;
         this.noteList = noteList;
         communicatior= (DeletingCommunicatior) mContext;
+
     }
 
     @NonNull
@@ -32,17 +34,19 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.MyViewHolder> 
 
     @Override
     public void onBindViewHolder(@NonNull final MyViewHolder holder, final int position) {
-        final Note note=noteList.get(position);
+        final Note note = noteList.get(position);
         holder.text.setText(note.getText());
 
         holder.delete.setOnClickListener(new View.OnClickListener() {
             @Override
             public void onClick(View v) {
 
-               communicatior.deleteOnClick(position,noteList.get(position).getText());
+                communicatior.deleteOnClick(position, noteList.get(position).getText());
 
             }
         });
+
+
     }
 
     @Override
@@ -51,13 +55,15 @@ public class NoteAdapter extends RecyclerView.Adapter<NoteAdapter.MyViewHolder> 
     }
 
 
+
     public class MyViewHolder extends RecyclerView.ViewHolder{
         public TextView text;
-        public ImageButton delete;
+        public ImageButton delete,edit;
         public MyViewHolder(@NonNull View itemView) {
             super(itemView);
             text=itemView.findViewById(R.id.note_text);
             delete=itemView.findViewById(R.id.deleteNote_btn);
+            edit=itemView.findViewById(R.id.editNote_btn);
         }
     }
 

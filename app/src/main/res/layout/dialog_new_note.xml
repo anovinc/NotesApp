@@ -2,13 +2,16 @@
 <RelativeLayout
     xmlns:android="http://schemas.android.com/apk/res/android"
     android:layout_width="match_parent"
+    android:background="@color/colorLightBlue"
     android:layout_height="match_parent">
 
     <TextView
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:id="@+id/newNoteDialog_Tv"
+        android:textColor="@color/colorFont"
         android:text="NEW NOTE"
+        android:textAlignment="gravity"
         android:layout_margin="16dp"
         android:textSize="20dp"></TextView>
 
@@ -16,6 +19,7 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:layout_margin="16dp"
+        android:textColor="@color/colorFont"
         android:id="@+id/newNote_ET"
         android:hint="ENTER NEW NOTE HERE"
         android:layout_below="@id/newNoteDialog_Tv"></EditText>
@@ -33,7 +37,9 @@
         android:layout_width="wrap_content"
         android:layout_height="wrap_content"
         android:text="ENTER"
+        android:background="@color/colorLightBlue"
         android:id="@+id/accept_newNote"
+        android:textColor="@color/colorFont"
         android:layout_below="@+id/newNote_ET"
         android:layout_toRightOf="@+id/NO__newNote"
         android:layout_margin="16dp"></TextView>
